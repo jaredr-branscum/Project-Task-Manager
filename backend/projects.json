@@ -1,0 +1,31 @@
+[
+  {
+    "id": "1743640843350",
+    "name": "Project A",
+    "description": "First test project",
+    "tasks": [
+      {
+        "id": "1743640896574",
+        "title": "Task A",
+        "status": "pending"
+      },
+      {
+        "id": "1743643201455",
+        "title": "Task B",
+        "status": "pending"
+      }
+    ]
+  },
+  {
+    "id": "1743643072009",
+    "name": "Project B",
+    "description": "Second test project",
+    "tasks": []
+  },
+  {
+    "id": "1743643551880",
+    "name": "Project C",
+    "description": "Third test project",
+    "tasks": []
+  }
+]
