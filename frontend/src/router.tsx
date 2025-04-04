@@ -5,6 +5,10 @@ import { ProjectDetails } from './pages/ProjectDetails'
 import { TaskDetails } from './pages/TaskDetails'
 
 const queryClient = new QueryClient()
+const nonClickableSegments = ['tasks']
+const segmentLabels: Record<string, string> = {
+    tasks: 'Tasks',
+}
 
 const Breadcrumbs = () => {
     const location = useLocation()
@@ -23,10 +27,18 @@ const Breadcrumbs = () => {
             ) : (
                 pathSegments.map((segment, index) => {
                     const path = `/${pathSegments.slice(0, index + 1).join('/')}`
+                    const isNonClickable = nonClickableSegments.includes(segment)
+                    const label = segmentLabels[segment] || segment
                     return (
                         <span key={path}>
                             {index > 0 && ' / '}
-                            <Link to={path}>{breadcrumbMap[segment] || segment}</Link>
+                            {isNonClickable ? (
+                                <span className="text-gray-600 cursor-default">
+                                    <b>{label}</b>
+                                </span>
+                            ) : (
+                                <Link to={path}>{segment}</Link>
+                            )}
                         </span>
                     )
                 })
