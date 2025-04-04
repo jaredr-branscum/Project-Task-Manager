@@ -1,13 +1,9 @@
 import { Link } from 'react-router-dom'
 import { useQuery } from '@tanstack/react-query'
-
-const fetchProjects = async () => {
-    const res = await fetch('http://localhost:5000/projects')
-    return res.json()
-}
+import { getProjects } from '../api/ProjectTaskManagerService'
 
 export const ProjectList = () => {
-    const { data: projects, isLoading } = useQuery({ queryKey: ['projects'], queryFn: fetchProjects })
+    const { data: projects, isLoading } = useQuery({ queryKey: ['projects'], queryFn: getProjects })
 
     if (isLoading) return <p className="loading">Loading...</p>
 

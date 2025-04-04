@@ -8,7 +8,8 @@
         "build": "vite build",
         "lint": "eslint .",
         "preview": "vite preview",
-        "prettier": "npx prettier --write ."
+        "prettier": "npx prettier --write .",
+        "postinstall": "vite-envs update-types"
     },
     "dependencies": {
         "@tailwindcss/postcss": "^4.1.1",
@@ -32,6 +33,7 @@
         "postcss": "^8.5.3",
         "prettier": "^3.5.3",
         "tailwindcss": "^4.1.1",
-        "vite": "^6.2.0"
+        "vite": "^6.2.0",
+        "vite-envs": "^4.6.0"
     }
 }

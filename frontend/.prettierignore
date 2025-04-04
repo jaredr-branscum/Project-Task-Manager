@@ -1,3 +1,4 @@
     node_modules
     dist
     *.lock
+    /src/vite-env.d.ts
